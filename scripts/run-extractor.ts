@@ -5,7 +5,7 @@ import { games } from "./games/index.js";
 import { writeJson } from "./helpers/output.js";
 import { join } from "node:path";
 
-type Command = { gameNames: string[]; listGames: boolean; verbose: boolean };
+type Command = { gameNames: string[]; listGames: boolean; outputDir: string | null; verbose: boolean };
 
 main().catch(handleFatalError);
 
@@ -20,11 +20,11 @@ async function main(): Promise<void> {
 
   const gamesToRun = resolveGamesToRun(command.gameNames);
 
-  await runExtractor({ gamesToRun, logger });
+  await runExtractor({ gamesToRun, logger, outputDir: command.outputDir });
 }
 
 function parseCommand(args: string[]): Command {
-  const command: Command = { gameNames: [], listGames: false, verbose: false };
+  const command: Command = { gameNames: [], listGames: false, outputDir: null, verbose: false };
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
@@ -36,6 +36,14 @@ function parseCommand(args: string[]): Command {
     }
     if (arg === "--list-games") {
       command.listGames = true;
+      continue;
+    }
+
+    if (arg === "--output-dir") {
+      const dir = args[i + 1] ?? null;
+      if (!dir) throw new Error(`Missing value for "--output-dir"`);
+      command.outputDir = dir;
+      i++;
       continue;
     }
 
@@ -88,15 +96,18 @@ function resolveGameByName(gameName: string): GameConfig {
 async function runExtractor({
   gamesToRun,
   logger,
+  outputDir,
 }: {
   gamesToRun: GameConfig[];
   logger: Logger;
+  outputDir: string | null;
 }): Promise<void> {
   assertGamesToRun(gamesToRun);
   logger.info(
     `[extractor] Starting extraction for ${gamesToRun.length} game(s): ${gamesToRun.map((g) => g.name).join(", ")}`,
   );
 
+  const resolvedOutputDir = outputDir ?? extractorConfig.outputDir;
   const interactionOptions = {
     timeoutMs: extractorConfig.waitTimeoutMs,
     settleDelayMs: extractorConfig.formDelayMs,
@@ -115,7 +126,7 @@ async function runExtractor({
 
     for (const game of gamesToRun) {
       const paylines = await game.strategy(game, context);
-      const outputPath = join(extractorConfig.outputDir, `${game.name}-paylines.json`);
+      const outputPath = join(resolvedOutputDir, `${game.name}-paylines.json`);
       await writeJson(outputPath, paylines);
       logger.info(`[game:${game.name}] Wrote ${outputPath}`);
     }

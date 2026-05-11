@@ -125,6 +125,32 @@ Edit `scripts/config/extractor-config.ts` to tune:
 | `waitIntervalMs` | `250` | Poll interval when waiting for elements |
 | `outputDir` | `outputs` | Directory for generated JSON files |
 
+## Consumer usage
+
+Install as a dev dependency in another project using the GitHub package URL pinned to a release tag:
+
+```bash
+pnpm add -D github:provably-fair-betting/verifierform-stake-paylines#v1.0.0
+```
+
+Add a script to the consumer's `package.json` and pass `--output-dir` to control where payline JSON files are written:
+
+```json
+"scripts": {
+  "sync:paylines": "stake-paylines --output-dir ./src/lib/paylines"
+}
+```
+
+Then run it:
+
+```bash
+pnpm sync:paylines
+```
+
+This writes one `{game-name}-paylines.json` file per game directly into the specified directory. The output directory is created automatically if it does not exist.
+
+All other flags (`--game`, `--list-games`, `--verbose`) work the same way as in standalone usage.
+
 ## Versioning
 
 This project uses [release-please](https://github.com/googleapis/release-please) with [Conventional Commits](https://www.conventionalcommits.org/). Merging a release-please PR bumps the version in `package.json` and updates `CHANGELOG.md` automatically.
