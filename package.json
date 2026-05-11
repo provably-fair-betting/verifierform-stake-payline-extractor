@@ -12,10 +12,10 @@
   "scripts": {
     "extract": "tsx ./scripts/run-extractor.ts"
   },
-  "dependencies": {
-    "puppeteer-real-browser": "^1.3.12",
-    "rebrowser-puppeteer-core": "^23.10.3",
-    "tsx": "^4.19.2"
+  "peerDependencies": {
+    "puppeteer-real-browser": ">=1.3.0",
+    "rebrowser-puppeteer-core": ">=23.0.0",
+    "tsx": ">=4.0.0"
   },
   "devDependencies": {
     "typescript": "^5.9.2"
