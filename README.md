@@ -1,6 +1,44 @@
 # verifierform-stake-paylines
 
+![Version](badges/version.svg)
+
 Automated payline extractor for [Stake.com](https://stake.com) provably fair games. Drives a real browser via Puppeteer to navigate each game's provably fair calculation page or live game page, interact with difficulty/row selectors, and scrape the resulting multiplier tables into structured JSON.
+
+## Consumer usage
+
+Install as a dev dependency in another project using the GitHub package URL pinned to a release tag:
+
+```bash
+pnpm add -D github:provably-fair-betting/verifierform-stake-paylines#v1.0.0
+```
+
+Add a script to the consumer's `package.json` and pass `--output-dir` to control where payline JSON files are written:
+
+```json
+"scripts": {
+  "sync:paylines": "stake-paylines --output-dir ./src/lib/paylines"
+}
+```
+
+Then run it:
+
+```bash
+pnpm sync:paylines
+```
+
+This writes one `{game-name}-paylines.json` file per game directly into the specified directory. The output directory is created automatically if it does not exist.
+
+All other flags (`--game`, `--list-games`, `--verbose`) work the same way as in standalone usage.
+
+The following peer dependencies must be declared in the consumer project:
+
+```json
+"devDependencies": {
+  "puppeteer-real-browser": "^1.3.12",
+  "rebrowser-puppeteer-core": "^23.10.3",
+  "tsx": "^4.19.2"
+}
+```
 
 ## How it works
 
@@ -124,32 +162,6 @@ Edit `scripts/config/extractor-config.ts` to tune:
 | `formDelayMs` | `500` | Settle delay between form interactions |
 | `waitIntervalMs` | `250` | Poll interval when waiting for elements |
 | `outputDir` | `outputs` | Directory for generated JSON files |
-
-## Consumer usage
-
-Install as a dev dependency in another project using the GitHub package URL pinned to a release tag:
-
-```bash
-pnpm add -D github:provably-fair-betting/verifierform-stake-paylines#v1.0.0
-```
-
-Add a script to the consumer's `package.json` and pass `--output-dir` to control where payline JSON files are written:
-
-```json
-"scripts": {
-  "sync:paylines": "stake-paylines --output-dir ./src/lib/paylines"
-}
-```
-
-Then run it:
-
-```bash
-pnpm sync:paylines
-```
-
-This writes one `{game-name}-paylines.json` file per game directly into the specified directory. The output directory is created automatically if it does not exist.
-
-All other flags (`--game`, `--list-games`, `--verbose`) work the same way as in standalone usage.
 
 ## Versioning
 
