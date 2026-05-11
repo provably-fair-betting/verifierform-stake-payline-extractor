@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/provably-fair-betting/verifierform-stake-paylines/compare/v1.0.0...v1.1.0) (2026-05-11)
+
+
+### Features
+
+* expose stake-paylines bin with --output-dir flag for consumer use ([95f9585](https://github.com/provably-fair-betting/verifierform-stake-paylines/commit/95f95852de1aa2427b52ebe11e103a3f3019b89e))
+
+
+### Chores
+
+* add missing commit types to changelog-sections ([7fdcf1b](https://github.com/provably-fair-betting/verifierform-stake-paylines/commit/7fdcf1b181b23b590bf680378d4ffbc0555239b3))
+* declare browser and tsx deps as peerDependencies ([175f405](https://github.com/provably-fair-betting/verifierform-stake-paylines/commit/175f405f1b0b6354719e2b088a8858aeeee2510c))
+* exclude component name from release tags ([7cdc8f0](https://github.com/provably-fair-betting/verifierform-stake-paylines/commit/7cdc8f0a5c258aea8142b3e3ef76c51c8eeaa9e6))
+
 ## 1.0.0 (2026-05-10)
 
 
