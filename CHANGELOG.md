@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/provably-fair-betting/verifierform-stake-paylines/compare/v1.1.1...v1.1.2) (2026-05-11)
+
+
+### Chores
+
+* fold badge generation into release-please workflow ([1f69b92](https://github.com/provably-fair-betting/verifierform-stake-paylines/commit/1f69b92fc4e30f622d435fbc228c24636b134f63))
+
 ## [1.1.1](https://github.com/provably-fair-betting/verifierform-stake-paylines/compare/v1.1.0...v1.1.1) (2026-05-11)
 
 
