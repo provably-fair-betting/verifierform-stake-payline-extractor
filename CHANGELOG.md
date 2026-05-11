@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/provably-fair-betting/verifierform-stake-paylines/compare/v1.0.0...v1.1.0) (2026-05-11)
+
+
+### Features
+
+* expose stake-paylines bin with --output-dir flag for consumer use ([95f9585](https://github.com/provably-fair-betting/verifierform-stake-paylines/commit/95f95852de1aa2427b52ebe11e103a3f3019b89e))
+
 ## 1.0.0 (2026-05-10)
 
 
