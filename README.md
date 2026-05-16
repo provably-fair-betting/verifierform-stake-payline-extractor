@@ -1,6 +1,7 @@
 # verifierform-stake-paylines
 
-![Version](badges/version.svg)
+[![CI](https://github.com/provably-fair-betting/verifierform-stake-paylines/actions/workflows/ci.yml/badge.svg)](https://github.com/provably-fair-betting/verifierform-stake-paylines/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/github/v/release/provably-fair-betting/verifierform-stake-paylines)](https://github.com/provably-fair-betting/verifierform-stake-paylines/releases/latest)
 
 Automated payline extractor for [Stake.com](https://stake.com) provably fair games. Drives a real browser via Puppeteer to navigate each game's provably fair calculation page or live game page, interact with difficulty/row selectors, and scrape the resulting multiplier tables into structured JSON.
 
