@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.1](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/compare/v2.0.0...v2.0.1) (2026-05-31)
+
+
+### Documentation
+
+* fix README description and clarify calculation page pattern ([4b2a6e1](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/commit/4b2a6e19313c5e46ff9e0d3536bc1bb6d7539b86))
+* move standalone usage before consumer usage in README ([6277239](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/commit/6277239b8cc8b529f871f72a8ba182a0bd903efa))
+* move standalone usage before consumer usage in README ([0949da2](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/commit/0949da22260317fe133b4cce0418066257817969))
+* simplify README and add adding-a-game and architecture guides ([8bcbaf5](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/commit/8bcbaf5e8f258afadbae3473559080d435f98aee))
+* simplify README and add adding-a-game and architecture guides ([e201911](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/commit/e2019111dbcb16246fa5ff33e8faa30f35814fe2))
+
 ## [2.0.0](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/compare/v1.1.3...v2.0.0) (2026-05-29)
 
 
