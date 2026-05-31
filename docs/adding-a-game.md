@@ -8,7 +8,7 @@ Three patterns exist depending on where Stake exposes the payline data:
 
 | Pattern | Use when | Examples |
 | ------- | -------- | -------- |
-| **Calculation page** | Game appears on `stake.com/provably-fair/calculation` with a difficulty/row selector | Bars, Cases, Packs, Plinko, Tarot |
+| **Calculation page** | Paylines are rendered in `stake.com/provably-fair/calculation` — select the game, apply dummy seeds, and read the resulting multiplier table | Bars, Cases, Packs, Plinko, Tarot |
 | **Game page scraper** | Paylines are visible on the live game page via in-game controls | Chicken, Darts, Pump, Snakes |
 | **Game events page** | Payouts are embedded as a JavaScript variable on `stake.com/provably-fair/game-events` | Wheel |
 

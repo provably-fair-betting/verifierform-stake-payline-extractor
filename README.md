@@ -3,7 +3,7 @@
 [![CI](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/actions/workflows/ci.yml/badge.svg)](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/github/v/release/provably-fair-betting/verifierform-stake-payline-extractor)](https://github.com/provably-fair-betting/verifierform-stake-payline-extractor/releases/latest)
 
-Drives Stake's provably fair pages in a real browser and writes one `{game}-paylines.json` file per game. Consumer projects use these files as static payline references.
+Drives Stake.com in a real browser and writes one `{game}-paylines.json` file per game. Consumer projects use these files as static payline references.
 
 ## Installation
 
